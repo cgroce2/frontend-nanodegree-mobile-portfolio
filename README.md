@@ -17,20 +17,9 @@ Used a smaller/optimized version of pizzeria.jpg
 Optimized image sizes
 Used uncss to remove any unnecessary CSS selectors
 Checked if any CSS selectors were unnecssary for above-the-fold content
-Moved to using Grunt to more easily make optimizations
-grunt-imageoptim --> optimized images
-grunt-uncss --> remove unnecessary CSS
-grunt-contrib-uglify --> Minify Javascript
-grunt-contrib-cssmin --> Minify CSS
-Inlined a minified version of the critical CSS
-grunt-inline --> automate inlining
 Added a src/ folder to contain pre-minified files
-Enjoyed using the grunt tasks to incrementally improve results
 
-
-I moved the development versions of the HTML/CSS/Javascript files into a src directory and src/css, src/js subdirectories. The grunt tasks automate the process of minifying CSS and Javascript (grunt-contrib-uglify & grunt-contrib-cssmin), inlining selected CSS and Javascript (grunt-inline), inlining the HTML (grunt-contrib-htmlmin) and moving the release files into their final locations.
-
-I started using Grunt to automate a number of the optimization tasks.
+Additionally, I started using Grunt to automate a number of the optimization tasks.
 
 grunt-uncss - task for uncss
 grunt-imageoptim - task for optimizing images
@@ -38,6 +27,9 @@ grunt-contrib-uglify - task to minify Javascript
 grunt-contrib-cssmin - task to minify css
 grunt-inline - task to inline critical CSS and Javascript
 
+I also added a src/ folder to contain pre-minified files
+
+I moved the development versions of the HTML/CSS/Javascript files into a src directory and src/css, src/js subdirectories. The grunt tasks automate the process of minifying CSS and Javascript (grunt-contrib-uglify & grunt-contrib-cssmin), inlining selected CSS and Javascript (grunt-inline) and moving the release files into their final locations.
 Results:
 
 Ultimately achieved a mobile PageSpeed Insights score of 96
@@ -59,14 +51,17 @@ Wrote a new function determineNewWidth(size) to do a much simpler width calculat
 Used a smaller/optimized version of pizzeria.jpg
 Optimized image sizes
 Used uncss to remove any unnecessary CSS selectors (bootstrap-grid)
-Moved to using Grunt to more easily make optimizations
+
+Additionally, I used Grunt to more easily make optimizations.
+
 grunt-imageoptim --> optimized images
 grunt-uncss --> remove unnecessary CSS
 grunt-contrib-uglify --> Minify Javascript
 grunt-contrib-cssmin --> Minify CSS
 Inlined a minified version of the critical CSS
 grunt-inline --> automate inlining of CSS
-Added a src/ folder to contain pre-minified files
+
+I also added a src/ folder to contain pre-minified files
 
 I moved the development versions of the HTML/CSS/Javascript files into a view/src directory and view/src/css, view/src/js subdirectories. The grunt tasks automate the process of minifying CSS and Javascript (grunt-contrib-uglify & grunt-contrib-cssmin), inlining the CSS (grunt-inline), inlining the HTML (grunt-contrib-htmlmin) and moving the release files into their final locations.
 

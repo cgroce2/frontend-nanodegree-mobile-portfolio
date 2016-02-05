@@ -9,17 +9,69 @@ Goal of Part 1:
 1. Identify and perform optimizations to achieve an improved PageSpeed score using PageSpeed Insights.
 2. Identify and perform optimizations impacting content efficiency.
 
-To increase the PageSpeed score here are some of the optmizations I made:
+To achieve this I performed the following optimizations / changes:
+
 Loaded JavaScript files asynchonously
 Used a media query for print.css
+Used a smaller/optimized version of pizzeria.jpg
 Optimized image sizes
-Used Grunt to help remove unnecessary css, minification of files and inlining of css.
+Used uncss to remove any unnecessary CSS selectors
+Checked if any CSS selectors were unnecssary for above-the-fold content
+Moved to using Grunt to more easily make optimizations
+grunt-imageoptim --> optimized images
+grunt-uncss --> remove unnecessary CSS
+grunt-contrib-uglify --> Minify Javascript
+grunt-contrib-cssmin --> Minify CSS
+Inlined a minified version of the critical CSS
+grunt-inline --> automate inlining
+Added a src/ folder to contain pre-minified files
+Enjoyed using the grunt tasks to incrementally improve results
 
+
+I moved the development versions of the HTML/CSS/Javascript files into a src directory and src/css, src/js subdirectories. The grunt tasks automate the process of minifying CSS and Javascript (grunt-contrib-uglify & grunt-contrib-cssmin), inlining selected CSS and Javascript (grunt-inline), inlining the HTML (grunt-contrib-htmlmin) and moving the release files into their final locations.
+
+I started using Grunt to automate a number of the optimization tasks.
+
+grunt-uncss - task for uncss
+grunt-imageoptim - task for optimizing images
+grunt-contrib-uglify - task to minify Javascript
+grunt-contrib-cssmin - task to minify css
+grunt-inline - task to inline critical CSS and Javascript
+
+Results:
+
+Ultimately achieved a mobile PageSpeed Insights score of 96
+Yay - 96 PageSpeed score -- Success!
+An automated Grunt pipeline to easily make further optimizations.
 
 
 Goal of Part 2:
 
-1. Identify and perform optimizations ensuring a consistent frame rate at 60fps when scrolling in pizza.html
-2. Identify and perform optimizations impacting content efficiency.
+Identify and perform optimizations ensuring a consistent frame rate at 60fps when scrolling in pizza.html
+Time to resize pizzas is less than 5 ms in pizza.html shown in the browser console.
+Identify and perform optimizations impacting content efficiency.
 
-To hit 60 fps I primrily made optimizations to main.js to remove unnecessary work from 'for' loops and wrote a new function. determineNewWidth(size), to do a much simpler width calculation when resizing pizzas.  I also optimized image sizes and used Grunt to help remove unnecessary css, minification of files and inlining of css. 
+
+To achieve this I performed the following optimizations / changes:
+
+Primary optimizations included changes to main.js to remove unnecessary work from 'for' loops
+Wrote a new function determineNewWidth(size) to do a much simpler width calculation when resizing pizzas.
+Used a smaller/optimized version of pizzeria.jpg
+Optimized image sizes
+Used uncss to remove any unnecessary CSS selectors (bootstrap-grid)
+Moved to using Grunt to more easily make optimizations
+grunt-imageoptim --> optimized images
+grunt-uncss --> remove unnecessary CSS
+grunt-contrib-uglify --> Minify Javascript
+grunt-contrib-cssmin --> Minify CSS
+Inlined a minified version of the critical CSS
+grunt-inline --> automate inlining of CSS
+Added a src/ folder to contain pre-minified files
+
+I moved the development versions of the HTML/CSS/Javascript files into a view/src directory and view/src/css, view/src/js subdirectories. The grunt tasks automate the process of minifying CSS and Javascript (grunt-contrib-uglify & grunt-contrib-cssmin), inlining the CSS (grunt-inline), inlining the HTML (grunt-contrib-htmlmin) and moving the release files into their final locations.
+
+Results:
+
+A consistent frame rate at or above 60fps when scrolling in pizza.html
+An automated Grunt pipeline to easily make further optimizations.
+ 
